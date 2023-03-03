@@ -4,14 +4,15 @@ import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
+import {NewComponent} from "./Map/NewComponent";
 
 function App() {
   return (
     <div>
-
-      <Header title={'Hello my title'}/>
+<NewComponent students={}
+      {/*<Header title={'Hello my title'}/>
         <Body titleForBody={'New Body'}/>
-        <Footer titleForFooter={'New Footer'}/>
+        <Footer titleForFooter={'New Footer'}/>*/}
     </div>
   );
 }
