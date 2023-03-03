@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
 
-      <Header />
-        <Body />
-        <Footer/>
+      <Header title={'Hello my title'}/>
+        <Body titleForBody={'New Body'}/>
+        <Footer titleForFooter={'New Footer'}/>
     </div>
   );
 }
