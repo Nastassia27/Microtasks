@@ -5,21 +5,37 @@ import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponent} from "./Map/NewComponent";
+import {MouseEvent} from 'react';
+import {Button} from "./components/Button";
 
 function App() {
-    const topCars = [
-        {manufacturer:'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
-    ]
-  return (
-    <div>
-<NewComponent topCars={topCars} />
-      {/*<Header title={'Hello my title'}/>
-        <Body titleForBody={'New Body'}/>
-        <Footer titleForFooter={'New Footer'}/>*/}
-    </div>
-  );
+    /*const myFirstSubscriber = (event: number) => {
+        console.log('Hello im Vasya')
+    }
+    const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
+        console.log('Hello im Ivan')
+    }*/
+
+const Button1Foo = (subscriber: string, age:number)=>{
+    console.log(subscriber, age)
+}
+    const Button2Foo = (subscriber: string, age:number)=>{
+        console.log(subscriber, age)
+    }
+    const Button3Foo = ()=>{
+        console.log("im stupid button")
+    }
+    return (
+        <div className='App'>
+
+            <Button name={'YouTubeChannel-1'} callBack={()=> Button1Foo('im vasya',21)}/>
+            <Button name={'YouTubeChannel-2'} callBack={()=>Button2Foo('im ivan',22)}/>
+            <Button name={'im stupid button'} callBack={Button3Foo}/>
+
+
+
+        </div>
+    );
 }
 
 export default App;
