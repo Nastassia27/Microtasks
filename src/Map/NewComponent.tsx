@@ -5,49 +5,33 @@ type NewCarsType = {
 }
 
 type CarsMarks = {
-    manufacturer:string
-    model:string
+    manufacturer: string
+    model: string
 }
 
 export const NewComponent = (props: NewCarsType) => {
-    const topCars = [
+    /*const topCars = [
         {manufacturer:'BMW', model:'m5cs'},
         {manufacturer:'Mercedes', model:'e63s'},
         {manufacturer:'Audi', model:'rs6'}
-    ]
-
-    /*<table>
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-        </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-        </tr>
-    </table>*/
+    ]*/
     return (
         <div>
             {props.topCars.map((objectFromCarsArray, index) => {
                 return (
-                    <table>
-                        <tr>
-                            <th>
-                                key={index[1]}
+                    <table key={index}>
+
+                        <tr >
+
+                            <th >
+
                                 <span>{objectFromCarsArray.manufacturer}</span>
+
+                            </th>
+                            <th>
                                 <span>{objectFromCarsArray.model}</span>
                             </th>
-
                         </tr>
-
-
                     </table>
                 )
             })}
