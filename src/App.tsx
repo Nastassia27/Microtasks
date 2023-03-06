@@ -11,7 +11,9 @@ import {FinalMicrotask} from "./FinalMicrotask";
 
 function App() {
 
-    type FilterType='All' | 'Dollars' | 'RUBLS'
+    export type FilterType= {
+        'All' | 'Dollars' | 'RUBLS'
+    }
 
     const [money, setMoney] = useState([
         {banknots: 'Dollars', value: 100, number: ' a1234567890'},
@@ -44,7 +46,7 @@ setFilter(name);
 
 
     return (
-        <FinalMicrotask/>
+        <FinalMicrotask />
         /*<div>
             <ul>
                 {currentMoney.map((objFromMoneyArr, index) => {
