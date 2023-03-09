@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import {Header} from "./site/Header";
+/*import {Header} from "./site/Header";
+import logo from './logo.svg';
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponent} from "./Map/NewComponent";
 import {MouseEvent} from 'react';
-import {Button} from "./components/Button";
-import {FinalMicrotask} from "./FinalMicrotask";
+import {Button} from "./components/Button";*/
+import {FinalMicrotask, MoneyObjTypes} from "./FinalMicrotask";
 
+export type FilterType = 'All' | 'Dollars' | 'RUBLS';
 function App() {
 
-    export type FilterType= {
-        'All' | 'Dollars' | 'RUBLS'
-    }
 
-    const [money, setMoney] = useState([
+
+    const [money, setMoney] = useState<Array<MoneyObjTypes>>([
         {banknots: 'Dollars', value: 100, number: ' a1234567890'},
         {banknots: 'Dollars', value: 50, number: ' z1234567890'},
         {banknots: 'RUBLS', value: 100, number: ' w1234567890'},
@@ -29,24 +29,25 @@ function App() {
     const [filter, setFilter] = useState<FilterType>('All')
 
     let currentMoney = money
-    if(filter==='RUBLS'){
-       (
+    if (filter === 'RUBLS') {
+        (
             currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS')
-        )}
-    if (filter==='Dollars'){
-       (
+        )
+    }
+    if (filter === 'Dollars') {
+        (
             currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'Dollars')
         )
     }
 
-    const onClickFilterHandler = (name: FilterType) => {
-setFilter(name);
+    const onClickFilterHandler = (value: FilterType) => {
+        setFilter(value);
 
-        }
+    }
 
 
     return (
-        <FinalMicrotask />
+        <FinalMicrotask money={currentMoney} onClickFilterHandler={onClickFilterHandler}/>
         /*<div>
             <ul>
                 {currentMoney.map((objFromMoneyArr, index) => {
@@ -69,3 +70,4 @@ setFilter(name);
 }
 
 export default App;
+

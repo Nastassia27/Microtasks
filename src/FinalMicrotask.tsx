@@ -2,21 +2,21 @@ import React, {useState} from 'react';
 import {FilterType} from "./App";
 
 
-type MoneyObjTypes = {
+export type MoneyObjTypes = {
     banknots: string
     value: number
     number: string
 }
 
 type NewComponentType = {
-    currentMoney: Array<MoneyObjTypes>
-    onClickFilterHandler: (name: FilterType)=> void
+    money: Array<MoneyObjTypes>
+    onClickFilterHandler: (value: FilterType)=> void
 }
 export const FinalMicrotask = (props: NewComponentType)=>{
     return(
         <div>
             <ul>
-                {props.currentMoney.map((e,index) => {
+                {props.money.map((e,index) => {
                     return (
                         <li key={index}>
                             <span>{e.banknots}</span>
